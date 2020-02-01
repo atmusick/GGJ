@@ -29,7 +29,7 @@ public class Leaderboard : MonoBehaviour
     void SetRandomNames()
     {
         string[] allNames = randomNames.text.Split('\n');
-        for(int i = 0;i<5;i++){
+        for(int i = 0;i<10;i++){
             names[i] = allNames[Random.Range(0,allNames.Length)];
         }
     }
