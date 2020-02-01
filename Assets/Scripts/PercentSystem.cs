@@ -38,6 +38,7 @@ public class PercentSystem : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")) 
         {
+            buttonClick.Play();
             Success();
             Check();
         }
