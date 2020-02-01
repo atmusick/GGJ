@@ -11,12 +11,7 @@ public class MoneySystem : MonoBehaviour
 
     public int repairPercentage; //REMOVE WHEN CONNECTED WITH CONTROLLER
     bool Mods = true; //REMOVE WHEN CONNECTED WITH CONTROLLER
-    bool illegalMods =true; //REMOVE WHEN CONNECTED WITH CONTROLLER
-
-    void Update()
-    {
-
-    }
+    bool illegalMods = true; //REMOVE WHEN CONNECTED WITH CONTROLLER
 
     public void Prices(){
         repairMoney = /*repair percentage here */0; //Place the Repair percentage in this spot!!!
