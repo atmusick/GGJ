@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PercentSystem : MonoBehaviour
 {
@@ -11,36 +12,27 @@ public class PercentSystem : MonoBehaviour
    public AudioSource buttonClick;
 
    bool winState = true;
+   public GameObject TextBox;
 
-
-    void Success()
+   public void Success()
     {     
         if(chance>= 50)
         {
-            Debug.Log("Player won!!");
             winState = true; //Makes the chances of losing higher
+            TextBox.GetComponent<Text>().text = "You Won!";
         }
         if(chance < 50)
         {
-            Debug.Log("Player lost!!");
             winState = false; //Makes the chances of getting winning higher
+            TextBox.GetComponent<Text>().text = "You Lost!";
         }
-    }
-      public void Check()
-    {
-        if (winState == false){
+        ////////////////////////////////////////////////////////////////////
+         if (winState == false){
             chance = (Random.Range(1,101)+10); //If player wins 
         }else{
             chance = (Random.Range(1,101)-10);
         }
+        ////////////////////////////////////////////////////////////////////
+        
     }
-    void Update()
-    {
-        if(Input.GetButtonDown("Fire1")) 
-        {
-            buttonClick.Play();
-            Success();
-            Check();
-        }
-    } 
 }
