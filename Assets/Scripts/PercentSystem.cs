@@ -12,19 +12,32 @@ public class PercentSystem : MonoBehaviour
    public AudioSource buttonClick;
 
    bool winState = true;
-   public GameObject TextBox;
+   //
+   public GameObject PanelOne;
+   public GameObject PanelTwo;
 
    public void Success()
     {     
         if(chance>= 50)
         {
             winState = true; //Makes the chances of losing higher
-            TextBox.GetComponent<Text>().text = "You Won!";
+            //TextBox.GetComponent<Text>().text = "You Won!";
+            if(PanelOne !=null)
+            {
+                bool isActive = PanelOne.activeSelf;   
+                PanelOne.SetActive(!isActive);  
+            }
+        //////////////////////////////////////////////////////////////////////
         }
         if(chance < 50)
         {
             winState = false; //Makes the chances of getting winning higher
-            TextBox.GetComponent<Text>().text = "You Lost!";
+            //TextBox.GetComponent<Text>().text = "You Lost!";
+             if(PanelTwo !=null)
+            {
+                bool isActive = PanelTwo.activeSelf;
+                PanelTwo.SetActive(isActive);
+            }
         }
         ////////////////////////////////////////////////////////////////////
          if (winState == false){
@@ -33,6 +46,5 @@ public class PercentSystem : MonoBehaviour
             chance = (Random.Range(1,101)-10);
         }
         ////////////////////////////////////////////////////////////////////
-        
     }
 }
